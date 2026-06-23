@@ -1,0 +1,72 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/university_db?useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password"></property>
+
+        <property name="connection.pool_size">1</property>
+
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <property name="hbm2ddl.auto">update</property>
+
+        <mapping class="user.User"/>
+        <mapping class="user.Student"/>
+        <mapping class="user.Assistant"/>
+        <mapping class="user.Admin"/>
+        <mapping class="topic.Topic"/>
+
+
+    </session-factory>
+</hibernate-configuration>
+
+<!--<!DOCTYPE hibernate-configuration PUBLIC-->
+<!--"-//Hibernate/Hibernate Configuration DTD 3.0//EN"-->
+<!--"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">-->
+<!--<hibernate-configuration>-->
+<!--  <session-factory> -->
+<!--    &lt;!&ndash; Database connection settings &ndash;&gt;-->
+<!--    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>-->
+<!--    <property name="connection.url">jdbc:mysql://localhost:3306/I_supervision</property>-->
+<!--    <property name="connection.username">C02</property>-->
+<!--    <property name="connection.password">C02_Pass</property>-->
+<!--    <property name="connection.autoReconnect">true</property>-->
+<!--    <property name="connection.autoReconnectForPools">true</property>-->
+<!--    <property name="connection.failOverReadOnly">false</property>-->
+<!--    -->
+<!--    &lt;!&ndash; JDBC connection pool (use the built-in) &ndash;&gt;-->
+<!--    &lt;!&ndash; <property name="connection.pool_size">0</property> &ndash;&gt;-->
+<!--    <property name="hibernate.c3p0.acquire_increment">1</property>-->
+<!--    <property name="hibernate.c3p0.min_size">5</property>-->
+<!--    <property name="hibernate.c3p0.max_size">20</property>-->
+<!--    <property name="hibernate.c3p0.timeout">3000</property>-->
+<!--    <property name="hibernate.c3p0.max_statements">50</property>-->
+<!--    <property name="hibernate.c3p0.idle_test_period">300</property>-->
+<!--    -->
+<!--    <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>-->
+<!--    -->
+<!--    &lt;!&ndash; SQL dialect &ndash;&gt;-->
+<!--    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>-->
+<!--    &lt;!&ndash; <property name="dialect">org.hibernate.dialect.MySQLMyISAMDialect</property> &ndash;&gt;-->
+<!--    -->
+<!--    &lt;!&ndash; Enable Hibernate's automatic session context management &ndash;&gt;-->
+<!--    <property name="current_session_context_class">thread</property>-->
+<!--    -->
+<!--    &lt;!&ndash; Disable the second-level cache &ndash;&gt;-->
+<!--    <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>-->
+<!--    -->
+<!--    &lt;!&ndash; Echo all executed SQL to stdout &ndash;&gt;-->
+<!--    <property name="show_sql">false</property>-->
+<!--    -->
+<!--    &lt;!&ndash; Drop and re-create the database schema on startup &ndash;&gt;-->
+<!--    <property name="hibernate.hbm2ddl.auto">update</property>-->
+<!--    -->
+<!--</session-factory>-->
+<!--</hibernate-configuration>-->
